@@ -1,5 +1,5 @@
 import GridPostList from '@/_root/pages/GridPostList';
-import { Models } from 'appwrite';
+// import { Models } from 'appwrite';
 import Loader from './Loader';
 
 type SearchResultsProps = {

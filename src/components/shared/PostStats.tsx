@@ -1,9 +1,8 @@
-import { useUserContext } from '@/context/AuthContext';
 import { useDeleteSavedPost, useGetCurrentUser, useLikePost, useSavePost } from '@/lib/react-query/queriesAndMutations';
 import { checkIsLiked } from '@/lib/utils';
 import { Models } from 'appwrite';
 import { Loader } from 'lucide-react';
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 type PostStatsProps = {
   post?: Models.Document;
