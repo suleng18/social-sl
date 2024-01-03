@@ -1,19 +1,19 @@
+import { Toaster } from '@/components/ui/toaster';
+import { Route, Routes } from 'react-router-dom';
 import AuthLayout from './_auth/AuthLayout';
 import SigninForm from './_auth/forms/SigninForm';
 import SignupForm from './_auth/forms/SignupForm';
 import RootLayout from './_root/RootLayout';
-import { Home, LikedPosts } from './_root/pages';
-import './globals.css';
-import { Routes, Route } from 'react-router-dom';
-import { Toaster } from '@/components/ui/toaster';
-import Explore from './_root/pages/Explore';
-import Saved from './_root/pages/Saved';
+import { Home } from './_root/pages';
 import AllUsers from './_root/pages/AllUsers';
 import CreatePost from './_root/pages/CreatePost';
 import EditPost from './_root/pages/EditPost';
+import Explore from './_root/pages/Explore';
 import PostDetails from './_root/pages/PostDetails';
 import Profile from './_root/pages/Profile';
+import Saved from './_root/pages/Saved';
 import UpdateProfile from './_root/pages/UpdateProfile';
+import './globals.css';
 
 const App = () => {
   return (

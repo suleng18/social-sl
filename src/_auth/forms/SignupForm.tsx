@@ -1,23 +1,23 @@
+import Loader from '@/components/shared/Loader';
 import { Button } from '@/components/ui/button';
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
+import { Input } from '@/components/ui/input';
+import { useToast } from '@/components/ui/use-toast';
+import { useUserContext } from '@/context/AuthContext';
+import { useCreateUserAccount, useSignInAccount } from '@/lib/react-query/queriesAndMutations';
+import { SignupValidation } from '@/lib/validation';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
-import { Input } from '@/components/ui/input';
-import { SignupValidation } from '@/lib/validation';
-import { z } from 'zod';
-import Loader from '@/components/shared/Loader';
 import { Link, useNavigate } from 'react-router-dom';
-import { useToast } from '@/components/ui/use-toast';
-import { useCreateUserAccount, useSignInAccount } from '@/lib/react-query/queriesAndMutations';
-import { useUserContext } from '@/context/AuthContext';
+import { z } from 'zod';
 
 const SignupForm = () => {
   const { toast } = useToast();
   const navigate = useNavigate();
-  const { checkAuthUser, isLoading: isUserLoading } = useUserContext();
+  const { checkAuthUser } = useUserContext();
 
   const { mutateAsync: createUserAccount, isPending: isCreateAccount } = useCreateUserAccount();
-  const { mutateAsync: signInAccount, isPending: isSigningIn } = useSignInAccount();
+  const { mutateAsync: signInAccount } = useSignInAccount();
 
   const form = useForm<z.infer<typeof SignupValidation>>({
     resolver: zodResolver(SignupValidation),
