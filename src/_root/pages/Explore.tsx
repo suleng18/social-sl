@@ -77,5 +77,3 @@ const Explore = () => {
 };
 
 export default Explore;
-
-//https://youtu.be/_W3R2VwRyF4?t=18368
