@@ -3,7 +3,7 @@ import { Models } from 'appwrite';
 import Loader from './Loader';
 
 type SearchResultsProps = {
-  searchedPosts: Models.Document[];
+  searchedPosts: any;
   isSearchFetching: boolean;
 };
 
